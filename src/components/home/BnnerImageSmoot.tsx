@@ -22,7 +22,7 @@ export default function BnnerImageSmoot({ mousePosition }: BnnerImageSmootProps)
         blurDataURL="/images/figures/ImgHome.png"
         style={{
           objectFit: 'contain',
-          objectPosition: '70% center', // Mueve la imagen hacia la derecha
+          objectPosition: '60% center', // Mueve la imagen hacia la derecha
           transition: 'all 0.5s ease-in-out',
         }}
       />

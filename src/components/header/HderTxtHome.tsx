@@ -30,17 +30,17 @@ export default function HderTxtHome() {
       <div className="w-full px-[5%]">
         <div className="flex justify-between items-center h-16">
           <div className="w-1/3">
-            <Link href="#" className="text-left font-broone text-[1.25rem] font-normal">
+            <Link href="#" className="text-left font-broone text-[1.125rem] font-normal">
               STORE
             </Link>
           </div>
           <div className="w-1/3 text-center">
-            <Link href="/menu" className="font-broone text-[1.25rem] font-normal">
+            <Link href="/menu" className="font-broone text-[1.125rem] font-normal">
               MENU
             </Link>
           </div>
           <div className="w-1/3 text-right">
-            <Link href="/artists" className="font-broone text-[1.25rem] font-normal">
+            <Link href="/artists" className="font-broone text-[1.125rem] font-normal">
               ARTISTS
             </Link>
           </div>
