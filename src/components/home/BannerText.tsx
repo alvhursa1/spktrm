@@ -2,33 +2,21 @@
 
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
-import Link from 'next/link'
 import localFont from 'next/font/local'
 import BnnerImageSmoot from './BnnerImageSmoot'
 
 // Fuentes personalizadas cargadas localmente
 const satoshiLight = localFont({ src: './../../app/fonts/Satoshi-Light.otf' })
 const marcellusFont = localFont({ src: './../../app/fonts/Marcellus-Regular.ttf' })
-const brooneFont = localFont({ src: './../../app/fonts/Broone.otf' })
 
 export default function BannerText() {
-  const [logoHeight, setLogoHeight] = useState(0)
-  const [isStretched, setIsStretched] = useState(false)
-  const [isHovered, setIsHovered] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const logoRef = useRef<HTMLDivElement>(null)
   const bannerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (logoRef.current) {
-      const height = logoRef.current.clientHeight
-      setLogoHeight(height)
-    }
-  }, [])
-
-  useEffect(() => {
     const timer = setTimeout(() => {
-      setIsStretched(true)
+      // You can use this timer for any initial animations if needed
     }, 500)
 
     return () => clearTimeout(timer)
@@ -101,12 +89,6 @@ export default function BannerText() {
             headaches
           </p>
         </div>
-
-        {/* Párrafo 3 */}
-
-
-        {/* Párrafo 4 */}
-
 
         {/* Logo Spektrum en la parte inferior */}
         <div ref={logoRef} className="absolute bottom-0 left-0 w-full flex justify-center">
