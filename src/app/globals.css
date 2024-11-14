@@ -14,6 +14,34 @@
   }
 }
 
+@font-face {
+  font-family: 'Broone';
+  src: url('./fonts/Broone.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi-Light';
+  src: url('./fonts/Satoshi-Light.otf') format('opentype');
+  font-weight: 100; /* Usar peso 100 */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi-Bold';
+  src: url('./fonts/Satoshi-Bold.otf') format('opentype');
+  font-weight: bold; /* O usar '700' para especificar el peso de la fuente */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Marcellus';
+  src: url('./fonts/Marcellus-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);

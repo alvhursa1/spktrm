@@ -12,6 +12,11 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        broone: ['Broone', 'sans-serif'],
+        marcellus: ['Marcellus', 'serif'],
+        'satoshi-light': ['Satoshi-Light', 'sans-serif'],
+      },
     },
   },
   plugins: [],

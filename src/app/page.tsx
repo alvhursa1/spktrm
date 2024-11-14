@@ -1,7 +1,17 @@
 
+import HderTxtHomelayout from "@/components/header/HderTxtHomelayout";
+import BannerText from "@/components/home/BannerText";
+
+
+
 export default function Home() {
   return (
-    <div>
-      <h1> Next 14 - React 18</h1>
-    </div>  );
+ <HderTxtHomelayout>
+      <main>
+        <BannerText />
+        <BannerText />
+      </main>
+      </HderTxtHomelayout>
+  );
 }
+
