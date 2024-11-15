@@ -10,16 +10,14 @@ interface Work {
 }
 
 const works: Work[] = [
-  { src: '/images/work1.png', title: 'Flyer', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida feugiat leo, quis luctus velit suscipit nec. Vestibulum sem nisl, rhoncus sit amet neque et, malesuada mollis nisl. Maecenas vel maximus urna.' },
-  { src: '/images/work2.png', title: 'Illustration', description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Illustration description.' },
-  { src: '/images/work3.png', title: 'Poster', description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Poster description.' },
-  { src: '/images/work4.png', title: 'Packaging illustration', description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Packaging illustration description.' },
-  { src: '/images/work5.png', title: 'Clothing illustration', description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Clothing illustration description.' },
-  { src: '/images/work6.png', title: 'Banner', description: 'Sed malesuada placerat augue sit amet commodo. Cras a ex et neque lobortis placerat. Aenean sit amet commodo lacus. Fusce aliquam sagittis nunc at commodo. Nullam vitae rhoncus diam. Praesent nec blandit est, ut posuere purus. Nunc turpis turpis, hendrerit sit amet tortor ut, consectetur volutpat elit. Nulla rhoncus ornare tempor.' },
-  { src: '/images/work7.png', title: 'Album Cover', description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Album Cover description.' },
-  { src: '/images/work8.png', title: 'Book cover', description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Book cover description.' },
-  { src: '/images/work9.png', title: 'Infographic', description: 'Proin metus erat, pretium vel hendrerit eget, cursus eget libero. Phasellus non ipsum lacus. Vivamus dapibus volutpat enim. Cras rhoncus lobortis congue. Mauris nec arcu sit amet arcu vulputate maximus. Sed ut congue justo, in facilisis nisl. In in mi quis ipsum dignissim ullamcorper.' },
-  { src: '/images/work10.png', title: 'Type setting design', description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Type setting design description.' },
+  { src: '/images/Advertising.png', title: 'Advertising', description: 'Tailored illustrations for media campaigns, helping brands stand out through creative and impactful visuals.' },
+  { src: '/images/Books.png', title: 'Books', description: 'Illustration services for books and other reading materials, bringing stories and content to life with unique artwork.' },
+  { src: '/images/Clothes.png', title: 'Clothes', description: 'Custom designs for clothing, turning garments into wearable art with illustrations that reflect personal style and creativity.' },
+  { src: '/images/Creative-Objects.png', title: 'Creative Objects', description: 'One-of-a-kind products crafted by our artists, available by commission or in stock at our Artifact store, each piece designed to inspire and captivate.' },
+  { src: '/images/Editable-Files.png', title: 'Editable Files', description: 'Digital illustrations available in our store, ready to be licensed and used in various products, offering flexibility and creativity to your projects.' },
+  { src: '/images/Murals.png', title: 'Murals', description: 'Commission an artist to create a custom mural, transforming spaces with large-scale, immersive art that tells a story.' },
+  { src: '/images/Music-Album.png', title: 'Music Album', description: 'Artistic support for musicians, with custom illustrations for album covers that visually represent their sound and vision.' },
+  { src: '/images/Packaging.png', title: 'Packaging', description: 'Customized packaging illustrations, ensuring your product stands out on shelves with creative, professional designs that leave a lasting impression.' },
 ]
 
 export default function WorkGallery() {
@@ -57,7 +55,7 @@ export default function WorkGallery() {
           <div className="flex flex-col items-center justify-start h-full pt-[10%]">
             {selectedWork && (
               <>
-                <div className="relative w-1/2 aspect-square mb-12">
+                <div className="relative w-[90%] aspect-square mb-12">
                   <Image
                     src={selectedWork.src}
                     alt={selectedWork.title}
