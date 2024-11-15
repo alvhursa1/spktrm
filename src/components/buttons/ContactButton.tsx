@@ -1,10 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
-export default function StoreButtonArtists() {
+export default function ContactButton() {
     const [isHovered, setIsHovered] = useState(false)
+
+    useEffect(() => {
+        let timer: NodeJS.Timeout
+        if (isHovered) {
+            timer = setTimeout(() => {
+                setIsHovered(false)
+            }, 2000)
+        }
+        return () => clearTimeout(timer)
+    }, [isHovered])
 
     const handleStoreClick = () => {
         if (typeof window !== 'undefined' && window.innerWidth < 768) {
@@ -13,9 +23,10 @@ export default function StoreButtonArtists() {
     }
 
     return (
-        <div className="flex flex-col justify-center items-center h-screen  -mb-40">
+        <Link href="/contact">
+        <div className="flex flex-col justify-center items-center h-screen -mt-64 -mb-44">
             {/* Envolvemos todo el botón en Link para que funcione el redireccionamiento */}
-            <Link href="#">
+
                 <div
                     className="relative w-[2.125rem] h-[2.125rem] rounded-full border-2 border-white cursor-pointer transition-all duration-500 ease-in-out group"
                     onMouseEnter={() => setIsHovered(true)}
@@ -29,25 +40,17 @@ export default function StoreButtonArtists() {
                         }`}
                     />
                 </div>
-            </Link>
+
             
-            {/* Contenedor del texto */}
-            <div className="relative mt-2 text-[1.125rem] transition-all duration-500 ease-in-out">
-                <div className={`text-center font-broone ${isHovered ? 'hidden' : 'block'}`}>
-                    STORE<br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                </div>
-                <div className={`font-satoshi text-left text-[1rem] ${isHovered ? 'block' : 'hidden'}`}>
-                If you don&apos;t want to hire an artist,<br />
-                     you can buy art in our store.                   <br />
-                </div>
-            </div>
+            {/* Texto 'Our artists' siempre visible */}
+
+                <span
+                    className="block mt-2 text-center whitespace-nowrap text-[1.125rem] font-broone transition-all duration-500 ease-in-out opacity-100 translate-y-0"
+                >
+                    CONTACT
+                </span>
+
         </div>
+        </Link>
     )
 }

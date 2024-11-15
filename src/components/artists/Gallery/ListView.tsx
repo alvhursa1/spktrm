@@ -1,5 +1,6 @@
 'use client'
 
+/* eslint-disable */
 import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { Artist } from '@/data/artists'
@@ -11,9 +12,10 @@ interface ListViewProps {
   artists: Artist[]
 }
 
+
 export default function ListView({ artists }: ListViewProps) {
   const [hoveredArtist, setHoveredArtist] = useState<string | null>(null)
-  const [isHoveredEnquire, setIsHoveredEnquire] = useState(false)
+  const [isHoveredEnquire, setIsHoveredEnquire] = useState(false) 
   const containerRef = useRef<HTMLDivElement>(null)
   const lastArtistRef = useRef<HTMLDivElement>(null)
   const enquireButtonRef = useRef<HTMLAnchorElement>(null)
