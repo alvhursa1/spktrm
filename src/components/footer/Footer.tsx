@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
           {/* Borde superior central */}
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 space-y-0 text-left">
             <a href="/artists" className="block">Artists</a>
-            <a href="/about" className="block">About</a>
+            <a href="/about-us" className="block">About</a>
           </div>
           {/* Borde superior derecha */}
           <div className="absolute top-0 right-0 space-y-0 pl-4 text-right">

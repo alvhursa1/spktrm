@@ -79,7 +79,7 @@ export default function MenuPage() {
             {/* Grid para organizar los elementos del menú */}
             <div className="grid grid-cols-3 grid-rows-3 gap-4 h-full w-full relative">
                 {/* Elementos del menú */}
-                {renderMenuItem("ABOUT US", "01", "/about", "about", "flex flex-col items-start justify-start")}
+                {renderMenuItem("ABOUT US", "01", "/about-us", "about", "flex flex-col items-start justify-start")}
                 {renderMenuItem("WORK", "02", "/work", "work", "flex flex-col items-center justify-start")}
                 {renderMenuItem("ARTISTS", "03", "/artists", "artists", "flex flex-col items-end justify-start")}
                 
