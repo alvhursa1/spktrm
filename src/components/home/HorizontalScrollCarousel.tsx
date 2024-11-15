@@ -32,7 +32,7 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const carouselPadding = { start: '3%', end: '3%' };
+/*   const carouselPadding = { start: '3%', end: '3%' }; */
 
   useEffect(() => {
     const handleResize = () => {

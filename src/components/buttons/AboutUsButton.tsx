@@ -23,7 +23,7 @@ export default function AboutUsButton() {
     }
 
     return (
-        <Link href="/about-us">
+        <Link href="/about">
         <div className="flex flex-col justify-center items-center h-screen -mt-64 -mb-44">
             {/* Envolvemos todo el botón en Link para que funcione el redireccionamiento */}
 
