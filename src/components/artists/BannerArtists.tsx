@@ -4,7 +4,7 @@ export default function BannerArtists() {
 
 
   return (
-      <div className="sticky top-0 h-screen flex flex-col justify-between py-[6%]">
+      <div className="top-0 h-screen flex flex-col justify-between py-[6%]">
         <div className="pl-[3%]">
           <h2 className="font-satoshi-light font-bold text-[2.69rem] w-[80vw] leading-tight">
             &nbsp;&nbsp;&nbsp;&nbsp;Representing top illustrators who produce captivating children’s, decorative & advertising works on comission or license

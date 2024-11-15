@@ -4,7 +4,7 @@ import LetstalkButton from '../buttons/LetstalkButton';
 
 const Footer: React.FC = () => {
   return (
-    <div className="flex flex-col h-screen pt-[2%]">
+    <div className="flex flex-col h-screen pt-[2%] z-[100] bg-black">
       {/* Flex 1: Contenido principal con más altura */}
       <div className="flex flex-[3] w-full pr-5">
         {/* Columna izquierda */}

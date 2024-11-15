@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-export default function StoreButton() {
+export default function StoreButtonArtists() {
     const [isHovered, setIsHovered] = useState(false)
 
     const handleStoreClick = () => {
@@ -13,7 +13,7 @@ export default function StoreButton() {
     }
 
     return (
-        <div className="flex flex-col justify-center items-center h-screen -mt-48 -mb-40">
+        <div className="flex flex-col justify-center items-center h-screen  -mb-40">
             {/* Envolvemos todo el botón en Link para que funcione el redireccionamiento */}
             <Link href="#">
                 <div
@@ -40,14 +40,12 @@ export default function StoreButton() {
                     <br />
                     <br />
                     <br />
+                    <br />
+                    <br />
                 </div>
                 <div className={`font-satoshi text-left text-[1rem] ${isHovered ? 'block' : 'hidden'}`}>
-                    License and download<br />
-                    images and animations<br />
-                    created by world-<br />
-                    renowned artists. Use them<br />
-                    for album covers, posters,<br />
-                    merchandise, and more.
+                If you don't want to hire an artist,<br />
+                     you can buy art in our store.                   <br />
                 </div>
             </div>
         </div>

@@ -75,9 +75,8 @@ export default function ListView({ artists }: ListViewProps) {
   return (
     <div ref={containerRef} className="w-full min-h-screen px-[3%] relative">
       <div className="flex items-center py-4 border-b border-white text-lg">
-        <div className="w-1/6 text-left font-broone text-[1.125rem]">#</div>
-        <div className="w-1/3 text-right font-broone text-[1.125rem]">Nombre Artista</div>
-        <div className="w-1/2 text-right font-broone text-[1.125rem]">Skills</div>
+        <div className="w-1/2 text-left font-broone text-[1.125rem]">#</div>
+        <div className="w-1/2 text-right font-broone text-[1.125rem]">NAME</div>
       </div>
       {artists.map((artist, index) => (
         <div 
@@ -89,25 +88,32 @@ export default function ListView({ artists }: ListViewProps) {
           onMouseEnter={() => setHoveredArtist(artist.id)}
           onMouseLeave={() => setHoveredArtist(null)}
         >
-          <div className="w-1/6 text-left font-satoshi-light text-[1rem] relative">
-            {artist.id}
+          <div className="w-1/2 text-left font-satoshi-light text-[1rem] relative">
+            <span className={`transition-all duration-300 ${hoveredArtist === artist.id ? 'text-[6rem]' : ''}`}>
+              {artist.id}
+            </span>
           </div>
-          <div className="w-1/3 flex items-center justify-end">
-            {hoveredArtist === artist.id && (
-              <div className="absolute left-[16.67%] w-48 h-48 z-10">
+          <div className="w-1/2 flex items-center justify-end">
+            <span className={`font-satoshi-light text-right transition-all duration-300 ${
+              hoveredArtist === artist.id ? 'text-[6rem]' : 'text-[1rem]'
+            }`}>
+              {artist.name}
+            </span>
+          </div>
+          {hoveredArtist === artist.id && (
+            <div className="fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
+              <div className="h-[80vh] w-[80vh] relative">
                 <Image
-                  src={`/images/${artist.images[0]}`}
+                  src={`/images/galery/${artist.images[0]}`}
                   alt={`${artist.name}'s work`}
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  style={{ objectFit: 'contain' }}
+                  sizes="60vh"
+                  priority
                 />
               </div>
-            )}
-            <span className="font-satoshi-light text-right text-[1rem]">{artist.name}</span>
-          </div>
-          <div className="w-1/2 text-right text-[1rem] font-satoshi-light">
-
-          </div>
+            </div>
+          )}
         </div>
       ))}
       <Link
@@ -117,17 +123,9 @@ export default function ListView({ artists }: ListViewProps) {
         onMouseEnter={() => setIsHoveredEnquire(true)}
         onMouseLeave={() => setIsHoveredEnquire(false)}
       >
-        <div
-          className="relative w-[2.125rem] h-[2.125rem] rounded-full border-2 border-white transition-all duration-500 ease-in-out"
-        >
-          <div
-            className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1rem] h-[1rem] rounded-full border-2 border-white transition-all duration-500 ease-in-out ${
-              isHoveredEnquire ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
-            }`}
-          />
-        </div>
-        <span className="ml-2 whitespace-nowrap text-[1.125rem] font-broone text-white">
-          Enquire to purchase
+        <span className="relative font-satoshi text-base font-extralight text-white uppercase group">
+          ENQUIRE TO PURCHASE
+          <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
         </span>
       </Link>
     </div>

@@ -167,7 +167,7 @@ export default function GridView({ artists }: GridViewProps) {
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                   />
                   {/* Hover overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 pb-[5px] pl-[5px] pr-[5px]">
+                  <div className="absolute bottom-0 left-0 right-0 pb-[10%] pl-[5px] pr-[5px]">
                     <div className="bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-between items-center px-[5px] py-[5px] rounded">
                       <span className="text-white text-[1rem] font-light">{artist.id}</span>
                       <span className="text-white text-[1rem] font-light">{artist.name}</span>
