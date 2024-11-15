@@ -32,7 +32,7 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const carouselPadding = { start: 32, end: '5%' };
+  const carouselPadding = { start: '3%', end: '3%' };
 
   useEffect(() => {
     const handleResize = () => {
@@ -51,15 +51,14 @@ const HorizontalScrollCarousel = () => {
       containerWidth = 1200;
     }
     return acc + containerWidth + 16;
-  }, 0) + carouselPadding.start + (windowWidth * 0.05); // Add 5% of window width for end padding
+  }, 0) + (windowWidth * 0.06); // Add 6% of window width for start and end padding
 
   const x = useTransform(scrollYProgress, [0, 1], ["0px", `-${totalWidth - windowWidth}px`]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-4 pt-[3vh] pb-[5vh]">
-          <div style={{ width: `${carouselPadding.start}px`, flexShrink: 0 }} />
+        <motion.div style={{ x }} className="flex gap-4 pt-[3vh] pb-[5vh] px-[3%]">
           {cards.map((card, index) => (
             <Card 
               card={card} 
@@ -69,10 +68,6 @@ const HorizontalScrollCarousel = () => {
               isLastCard={index === cards.length - 1}
             />
           ))}
-          <div className="flex items-center just">
-            {/* Este comentario se mantiene igual */}
-          </div>
-          <div style={{ width: carouselPadding.end, flexShrink: 0 }} />
         </motion.div>
       </div>
     </section>
@@ -120,9 +115,11 @@ const Card = ({ card, windowHeight, windowWidth, isLastCard }: CardProps) => {
       <Image
         src={card.url}
         alt={`Image ${card.id}`}
-        fill
-        style={{ objectFit: 'cover' }}
-        sizes={`(max-width: 768px) 100vw, ${containerWidth}px`}
+        width={card.width}
+        height={card.height}
+        style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+        quality={100}
+        unoptimized
       />
     </div>
   );
@@ -132,221 +129,235 @@ export default Example;
 
 const cards = [
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-1.webp",
-    title: "Title 1",
-    id: 1,
-    width: 666,
-    height: 1000,
+    "id": 1,
+    "url": "/images/carrusel-home/H01.jpeg",
+    "title": "Imagen 1",
+    "link": "#",
+    "width": 1332,
+    "height": 2000
   },
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-2.webp",
-    title: "Title 2",
-    id: 2,
-    width: 721,
-    height: 900,
+    "id": 2,
+    "url": "/images/carrusel-home/H02.png",
+    "title": "Imagen 2",
+    "link": "#",
+    "width": 1201,
+    "height": 1500
   },
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-3.webp",
-    title: "Title 3",
-    id: 3,
-    width: 635,
-    height: 900,
+    "id": 3,
+    "url": "/images/carrusel-home/H03.jpg",
+    "title": "Imagen 3",
+    "link": "#",
+    "width": 1058,
+    "height": 1500
   },
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-4.webp",
-    title: "Title 4",
-    id: 4,
-    width: 719,
-    height: 930,
+    "id": 4,
+    "url": "/images/carrusel-home/H05.jpeg",
+    "title": "Imagen 4",
+    "link": "#",
+    "width": 1594,
+    "height": 2000
   },
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-5.webp",
-    title: "Title 5",
-    id: 5,
-    width: 811,
-    height: 1018,
+    "id": 5,
+    "url": "/images/carrusel-home/H06.jpg",
+    "title": "Imagen 5",
+    "link": "#",
+    "width": 1500,
+    "height": 2000
   },
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-6.webp",
-    title: "Title 6",
-    id: 6,
-    width: 800,
-    height: 498,
+    "id": 6,
+    "url": "/images/carrusel-home/H07.png",
+    "title": "Imagen 6",
+    "link": "#",
+    "width": 1600,
+    "height": 2000
   },
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-7.webp",
-    title: "Title 7",
-    id: 7,
-    width: 744,
-    height: 930,
+    "id": 7,
+    "url": "/images/carrusel-home/H08.jpg",
+    "title": "Imagen 7",
+    "link": "#",
+    "width": 1272,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-8.webp ",
-    title: "Title ",
-    id: 8,
-    width: 628,
-    height: 987,
+    "id": 8,
+    "url": "/images/carrusel-home/H09.jpg",
+    "title": "Imagen 8",
+    "link": "#",
+    "width": 1429,
+    "height": 2000
   },
-  
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-9.webp",
-    title: "Title ",
-    id: 9,
-    width: 668,
-    height: 935,
+    "id": 9,
+    "url": "/images/carrusel-home/H10.jpg",
+    "title": "Imagen 9",
+    "link": "#",
+    "width": 1429,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-10.webp",
-    title: "Title ",
-    id: 10,
-    width: 714,
-    height: 1000,
+    "id": 10,
+    "url": "/images/carrusel-home/H11.jpg",
+    "title": "Imagen 10",
+    "link": "#",
+    "width": 1324,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-11.webp ",
-    title: "Title ",
-    id: 11,
-    width: 609,
-    height: 920,
+    "id": 11,
+    "url": "/images/carrusel-home/H12.jpg",
+    "title": "Imagen 11",
+    "link": "#",
+    "width": 1337,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-12.webp ",
-    title: "Title ",
-    id: 12,
-    width: 669,
-    height: 1000,
+    "id": 12,
+    "url": "/images/carrusel-home/H13.png",
+    "title": "Imagen 12",
+    "link": "#",
+    "width": 1546,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-13.webp ",
-    title: "Title ",
-    id: 13,
-    width: 710,
-    height: 918,
+    "id": 13,
+    "url": "/images/carrusel-home/H14.jpeg",
+    "title": "Imagen 13",
+    "link": "#",
+    "width": 1429,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-14.webp",
-    title: "Title ",
-    id: 14,
-    width: 600,
-    height: 840,
+    "id": 14,
+    "url": "/images/carrusel-home/H15.jpg",
+    "title": "Imagen 14",
+    "link": "#",
+    "width": 2000,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-15.webp ",
-    title: "Title ",
-    id: 15,
-    width: 700,
-    height: 700,
+    "id": 15,
+    "url": "/images/carrusel-home/H16.jpg",
+    "title": "Imagen 15",
+    "link": "#",
+    "width": 2000,
+    "height": 1545
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-16.webp",
-    title: "Title ",
-    id: 16,
-    width: 800,
-    height: 618,
+    "id": 16,
+    "url": "/images/carrusel-home/H17.jpeg",
+    "title": "Imagen 16",
+    "link": "#",
+    "width": 1579,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-17.webp",
-    title: "Title ",
-    id: 17,
-    width: 757,
-    height: 959,
+    "id": 17,
+    "url": "/images/carrusel-home/H18.jpeg",
+    "title": "Imagen 17",
+    "link": "#",
+    "width": 1600,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-18.webp ",
-    title: "Title ",
-    id: 18,
-    width: 736,
-    height: 920,
+    "id": 18,
+    "url": "/images/carrusel-home/H19.jpg",
+    "title": "Imagen 18",
+    "link": "#",
+    "width": 2000,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-19.webp ",
-    title: "Title ",
-    id: 19,
-    width: 940,
-    height: 940,
+    "id": 19,
+    "url": "/images/carrusel-home/H20.jpg",
+    "title": "Imagen 19",
+    "link": "#",
+    "width": 1429,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-20.webp ",
-    title: "Title ",
-    id: 20,
-    width: 650,
-    height: 910,
+    "id": 20,
+    "url": "/images/carrusel-home/H21.png",
+    "title": "Imagen 20",
+    "link": "#",
+    "width": 1461,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-21.webp ",
-    title: "Title ",
-    id: 21,
-    width: 650,
-    height: 890,
+    "id": 21,
+    "url": "/images/carrusel-home/H22.png",
+    "title": "Imagen 21",
+    "link": "#",
+    "width": 1349,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-22.webp ",
-    title: "Title ",
-    id: 22,
-    width: 623,
-    height: 924,
+    "id": 22,
+    "url": "/images/carrusel-home/H23.png",
+    "title": "Imagen 22",
+    "link": "#",
+    "width": 2000,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-23.webp ",
-    title: "Title ",
-    id: 23,
-    width: 800,
-    height: 800,
+    "id": 23,
+    "url": "/images/carrusel-home/H24.jpg",
+    "title": "Imagen 23",
+    "link": "#",
+    "width": 2000,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-24.webp ",
-    title: "Title ",
-    id: 24,
-    width: 840,
-    height: 840,
+    "id": 24,
+    "url": "/images/carrusel-home/H25.jpeg",
+    "title": "Imagen 24",
+    "link": "#",
+    "width": 1990,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-25.webp ",
-    title: "Title ",
-    id: 25,
-    width: 743,
-    height: 891,
+    "id": 25,
+    "url": "/images/carrusel-home/H26.jpeg",
+    "title": "Imagen 25",
+    "link": "#",
+    "width": 2000,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-26.webp ",
-    title: "Title ",
-    id: 26,
-    width: 900,
-    height: 900,
+    "id": 26,
+    "url": "/images/carrusel-home/H27.jpg",
+    "title": "Imagen 26",
+    "link": "#",
+    "width": 1856,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/carrusel-home-spektrum-27.webp ",
-    title: "Title ",
-    id: 27,
-    width: 600,
-    height: 878,
+    "id": 27,
+    "url": "/images/carrusel-home/H28.JPG",
+    "title": "Imagen 27",
+    "link": "#",
+    "width": 2000,
+    "height": 2000
   },
-
   {
-    url: "/images/carrusel-home/ULTIMA.png ",
-    title: "Title ",
-    id: 28,
-    width: 1400,
-    height: 577,
+    "id": 28,
+    "url": "/images/carrusel-home/H29.png",
+    "title": "Imagen 28",
+    "link": "#",
+    "width": 1480,
+    "height": 1850
   },
-
+  {
+    "id": 29,
+    "url": "/images/carrusel-home/ULTIMA.png",
+    "title": "Imagen 29",
+    "link": "#",
+    "width": 1400,
+    "height": 577
+  }
 ];

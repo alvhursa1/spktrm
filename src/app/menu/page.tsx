@@ -79,8 +79,8 @@ export default function MenuPage() {
             {/* Grid para organizar los elementos del menú */}
             <div className="grid grid-cols-3 grid-rows-3 gap-4 h-full w-full relative">
                 {/* Elementos del menú */}
-                {renderMenuItem("ABOUT US", "01", "#", "about", "flex flex-col items-start justify-start")}
-                {renderMenuItem("WORK", "02", "#", "work", "flex flex-col items-center justify-start")}
+                {renderMenuItem("ABOUT US", "01", "/about", "about", "flex flex-col items-start justify-start")}
+                {renderMenuItem("WORK", "02", "/work", "work", "flex flex-col items-center justify-start")}
                 {renderMenuItem("ARTISTS", "03", "/artists", "artists", "flex flex-col items-end justify-start")}
                 
                 {/* Botón de regreso */}
@@ -98,7 +98,7 @@ export default function MenuPage() {
                 <div></div>
                 
                 {/* Elementos finales del menú */}
-                {renderMenuItem("CONTACT", "05", "#", "contact", "flex flex-col items-center justify-end")}
+                {renderMenuItem("CONTACT", "05", "/contact", "contact", "flex flex-col items-center justify-end")}
                 {renderMenuItem("ARTIFACT", "06", "#", "artifact", "flex flex-col items-end justify-end")}
             </div>
         </div>

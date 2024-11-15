@@ -16,14 +16,16 @@ export default function BnnerImageSmoot({ mousePosition }: BnnerImageSmootProps)
       <Image
         src="/images/figures/ImgHome.png"
         alt="Banner de Spektrum"
-        fill
+        width={1920} // Adjust this to match your image's actual width
+        height={1080} // Adjust this to match your image's actual height
         quality={100}
-        placeholder="blur"
-        blurDataURL="/images/figures/ImgHome.png"
+        unoptimized
         style={{
           objectFit: 'contain',
-          objectPosition: '60% center', // Mueve la imagen hacia la derecha
+          objectPosition: '60% center',
           transition: 'all 0.5s ease-in-out',
+          width: '100%',
+          height: '100%',
         }}
       />
     </div>
