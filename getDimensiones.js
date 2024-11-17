@@ -7,7 +7,7 @@ const sizeOf = require('image-size');
 const { title } = require('process');
 
 // Ajusta esta ruta a la ubicación correcta de tus imágenes
-const directorio = path.join(__dirname, 'public', 'images', 'carrusel-home');
+const directorio = path.join(__dirname, 'public', 'images', 'about');
 
 fs.readdir(directorio, (err, archivos) => {
   if (err) {
@@ -28,7 +28,7 @@ fs.readdir(directorio, (err, archivos) => {
       }
       return {
         id: index + 1,
-      url: `/images/carrusel-home/${archivo}`,
+      url: `/images/about/${archivo}`,
       title: `Imagen ${index + 1}`,
         link: `#`,
         width: dimensiones.width,

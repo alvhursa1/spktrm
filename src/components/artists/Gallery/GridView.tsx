@@ -70,8 +70,8 @@ export default function GridView({ artists }: GridViewProps) {
   // Create scroll-based transforms for each column
   const { height } = dimension;
   const yTransform1 = useTransform(scrollYProgress, [0, 1], [0, height * 2]);
-  const yTransform2 = useTransform(scrollYProgress, [0, 1], [0, height * 3]);
-  const yTransform3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.5]);
+  const yTransform2 = useTransform(scrollYProgress, [0, 1], [0, height * 2.5]);
+  const yTransform3 = useTransform(scrollYProgress, [0, 1], [0, height * 2.9]);
 
   const getImageOrientation = (dimensions: ImageDimensions) => {
     if (dimensions.width > dimensions.height) return 'landscape';

@@ -1,17 +1,16 @@
 'use client'
 
-import Image from 'next/image'
+
 import { useState, useEffect, useRef } from 'react'
 import localFont from 'next/font/local'
 import BnnerImageSmoot from './BnnerImageSmootAbout'
 
 // Fuentes personalizadas cargadas localmente
 const satoshiLight = localFont({ src: './../../app/fonts/Satoshi-Light.otf' })
-const marcellusFont = localFont({ src: './../../app/fonts/Marcellus-Regular.ttf' })
+
 
 export default function AboutBannerText() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const logoRef = useRef<HTMLDivElement>(null)
   const bannerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {

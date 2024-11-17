@@ -9,14 +9,14 @@ import HderTxtArtistslayout from "@/components/header/HderTxtArtistslayout";
 
 export default function Home() {
     return (
-<HderTxtArtistslayout>
-<main>
-<BannerArtists />
-<ArtistGallery />
-<StoreButtonArtists />
-<Footer />
-</main>
-</HderTxtArtistslayout>
+        <HderTxtArtistslayout>
+            <main>
+                <BannerArtists />
+                <ArtistGallery />
+                <StoreButtonArtists />
+                <Footer />
+            </main>
+        </HderTxtArtistslayout>
 
     )
 }
