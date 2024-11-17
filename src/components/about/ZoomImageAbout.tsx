@@ -4,15 +4,19 @@ import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { Marcellus } from 'next/font/google'
+
+const marcellus = Marcellus({ weight: '400', subsets: ['latin'] })
 
 gsap.registerPlugin(ScrollTrigger)
 
-const ZoomImageAbout: React.FC = () => {
+export default function ZoomImageAbout() {
   const containerRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLDivElement>(null)
+  const textRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (containerRef.current && imageRef.current) {
+    if (containerRef.current && imageRef.current && textRef.current) {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -33,21 +37,25 @@ const ZoomImageAbout: React.FC = () => {
         },
         {
           scale: 0.5,
-          y: '-20%',
+          y: '-25%',
           duration: 0.5,
           ease: 'none',
         }
       )
 
-/*       tl.to(
-        containerRef.current,
+      tl.fromTo(
+        textRef.current,
         {
-          height: '100vh',
-          duration: 1,
-          ease: 'none',
+          opacity: 0,
+          y: 30,
         },
-        0
-      ) */
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.3,
+        },
+        '-=0.2'
+      )
     }
 
     return () => {
@@ -75,8 +83,13 @@ const ZoomImageAbout: React.FC = () => {
           className="object-cover w-full h-full"
         />
       </div>
+      <div 
+        ref={textRef}
+        className={`absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center ${marcellus.className}`}
+        style={{ fontSize: '1rem' }}
+      >
+        THE ILLUSTRATiON AGENCY
+      </div>
     </div>
   )
 }
-
-export default ZoomImageAbout
