@@ -7,7 +7,7 @@ interface BnnerImageSmootProps {
 export default function BnnerImageSmootAbout({ mousePosition }: BnnerImageSmootProps) {
   return (
     <div
-      className="relative w-[90vw] h-[100vh] overflow-hidden mt-10"
+      className="relative w-[90vw] h-[100vh] overflow-hidden mt-[5%]"
       style={{
         transform: `translate(${mousePosition.x * 50}px, ${mousePosition.y * 50}px)`,
         transition: 'transform 0.4s ease-out',
@@ -22,10 +22,10 @@ export default function BnnerImageSmootAbout({ mousePosition }: BnnerImageSmootP
         unoptimized
         style={{
           objectFit: 'contain',
-          objectPosition: '60% center',
+          objectPosition: '80% center',
           transition: 'all 0.5s ease-in-out',
-          width: '95%',
-          height: '95%',
+          width: '80%',
+          height: '80%',
         }}
       />
     </div>

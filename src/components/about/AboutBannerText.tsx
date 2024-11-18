@@ -45,7 +45,7 @@ export default function AboutBannerText() {
       {/* El resto del contenido permanece igual */}
       <div className="relative z-10 w-full h-full leading-tight">
         {/* Texto alineado a la izquierda */}
-        <div className={`absolute top-[50%] left-0 leading-tight ${satoshiLight.className}`}>
+        <div className={`absolute top-[50%] left-0 leading-tight pl-[0.5%] ${satoshiLight.className}`}>
           <p
             style={{
               fontSize: '1.125rem',
@@ -60,7 +60,7 @@ export default function AboutBannerText() {
         </div>
 
         {/* Texto alineado a la derecha */}
-        <div className={`absolute top-[50%] right-0 leading-tight ${satoshiLight.className}`}>
+        <div className={`absolute top-[50%] pr-[0.5%] right-0 leading-tight ${satoshiLight.className}`}>
           <p
             style={{
               fontSize: '1.125rem',

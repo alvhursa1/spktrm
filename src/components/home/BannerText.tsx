@@ -72,13 +72,14 @@ export default function BannerText() {
         </div>
 
         {/* Párrafo 2 */}
-        <div className={`absolute top-[55%] right-[3%] leading-tight ${satoshiLight.className}`}>
+        <div className={`absolute top-[55%] right-[7.5%] leading-tight ${satoshiLight.className}`}>
           <p
             style={{
               fontSize: '0.8rem',
               lineHeight: '1.1',
               color: 'white',
               textAlign: 'left',
+              height: '10%',
             }}
           >
             Effortless art <br />

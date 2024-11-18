@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import LetstalkButton from '../buttons/LetstalkButton';
 
 const Footer: React.FC = () => {
   return (
@@ -9,15 +8,7 @@ const Footer: React.FC = () => {
       <div className="flex flex-[3] w-full pr-5">
         {/* Columna izquierda */}
         <div className="flex-1 flex flex-col justify-center pl-8">
-          <h1 className="font-marcellus text-[1.5rem] leading-none">
-            Boring <span className="font-broone">Visuals?</span>
-          </h1>
-          <p className="font-satoshi-light text-[1rem] pl-[12.5%]">
-            Not on our watch.
-          </p>
-          <div className="mt-4 pl-[10%]">
-            <LetstalkButton />
-          </div>
+
         </div>
 
         {/* Columna derecha: Menú */}
@@ -27,29 +18,32 @@ const Footer: React.FC = () => {
             <a href="/" className="block">Home</a>
             <a href="/contact" className="block">Contact</a>
             <a href="/work" className="block">Work</a>
+            <a href="/about-us" className="block">About</a>
           </div>
           {/* Borde superior central */}
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 space-y-0 text-left">
             <a href="/artists" className="block">Artists</a>
-            <a href="/about-us" className="block">About</a>
+            <a href="#" className="block">Artifact</a>
+            <a href="https://www.instagram.com/spektrum.agency/" className="block">Instagram</a>
+            <a href="https://www.linkedin.com/company/spektrumagency/" className="block">Linkedin</a>
           </div>
           {/* Borde superior derecha */}
           <div className="absolute top-0 right-0 space-y-0 pl-4 text-right">
-            <a href="mailto:team@spektrumagency.us" className="block">team@spektrumagency.us</a>
+            <a href="mailto:andymoraw@spektrumagency.com" className="block">andymoraw@spektrumagency.com</a>
             <a href="/faqs" className="block">FAQs</a>
           </div>
 
           {/* Borde inferior derecha */}
           <div className="absolute bottom-0 right-0 space-y-0 pl-4">
-            <a href="https://www.instagram.com/spektrum.agency/" className="block">Instagram</a>
+
           </div>
           {/* Borde inferior central */}
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 space-y-2 text-left">
-            <a href="#" className="block">Artifact</a>
+
           </div>
           {/* Borde inferior izquierda */}
           <div className="absolute bottom-0 left-0 space-y-0 pr-4">
-            <a href="https://www.linkedin.com/company/spektrumagency/" className="block">Linkedin</a>
+
           </div>
         </div>
       </div>

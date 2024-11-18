@@ -41,7 +41,7 @@ export default function StoreButton() {
                     <br />
                     <br />
                 </div>
-                <div className={`font-satoshi text-left text-[1rem] ${isHovered ? 'block' : 'hidden'}`}>
+                <div className={`font-satoshi text-center text-[1rem] ${isHovered ? 'block' : 'hidden'}`}>
                     License and download<br />
                     images and animations<br />
                     created by world-<br />

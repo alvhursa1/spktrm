@@ -37,7 +37,7 @@ export default function ZoomImageAbout() {
         },
         {
           scale: 0.5,
-          y: '-25%',
+          y: '-20%',
           duration: 0.5,
           ease: 'none',
         }

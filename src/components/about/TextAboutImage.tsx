@@ -49,11 +49,11 @@ export default function TextAboutImage() {
 
   return (
     <div className="w-full">
-      <div className="pl-[3%] mb-16">
+      <div className="pl-[3%] mb-16 -mt-[25%]">
         <h2 className="pl-[3%] font-marcellus text-[3rem] leading-tight">Small team,</h2>
         <h1 className="font-broone text-[4rem] leading-tight">BIG VISION</h1>
       </div>
-      <div ref={containerRef} className="flex w-full">
+      <div ref={containerRef} className="flex w-full -mt-[5%]">
         <div className="w-[70%] p-8">
           {textLines.map((line, index) => (
             <div

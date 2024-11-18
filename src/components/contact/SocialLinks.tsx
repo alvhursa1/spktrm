@@ -4,10 +4,10 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 
 const socialLinks = [
-  { name: 'LinkedIn', text: 'LN', url: 'https://www.linkedin.com/company/spektrumagency/' },
-  { name: 'Instagram', text: 'IN', url: 'https://www.instagram.com/spektrum.agency/' },
-  { name: 'WhatsApp', text: 'WA', url: '#' },
-  { name: 'Email', text: '@', url: 'team@spektrumagency.us' },
+  { name: 'LinkedIn/company/spektrumagency/', text: 'LN', url: 'https://www.linkedin.com/company/spektrumagency/' },
+  { name: 'Instagram/spektrum.agency', text: 'IN', url: 'https://www.instagram.com/spektrum.agency/' },
+  { name: 'facebook.com/spektrum.agency', text: 'FB', url: 'https://www.facebook.com/share/1DCdU5RNuZ/?mibextid=LQQJ4d' },
+  { name: 'andymoraw@spektrumagency.com', text: '@', url: 'andymoraw@spektrumagency.com' },
 ]
 
 export default function SocialLinks() {
@@ -32,7 +32,7 @@ export default function SocialLinks() {
           <Link
             key={link.name}
             href={link.url}
-            onMouseEnter={() => setHoveredLink(link.url)}
+            onMouseEnter={() => setHoveredLink(link.name)}
             onMouseLeave={() => setHoveredLink(null)}
             className="transition-colors duration-300 text-gray-600 hover:text-white"
             aria-label={`${link.name} link`}
