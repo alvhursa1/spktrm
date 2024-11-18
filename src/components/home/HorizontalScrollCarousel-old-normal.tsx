@@ -32,7 +32,7 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const carouselPadding = { start: 32, end: '5%' };
+/*   const carouselPadding = { start: '3%', end: '3%' }; */
 
   useEffect(() => {
     const handleResize = () => {
@@ -51,15 +51,14 @@ const HorizontalScrollCarousel = () => {
       containerWidth = 1200;
     }
     return acc + containerWidth + 16;
-  }, 0) + carouselPadding.start + (windowWidth * 0.005); // Add 5% of window width for end padding
+  }, 0) + (windowWidth * 0.06); // Add 6% of window width for start and end padding
 
   const x = useTransform(scrollYProgress, [0, 1], ["0px", `-${totalWidth - windowWidth}px`]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-4 pt-[3vh] pb-[5vh]">
-          <div style={{ width: `${carouselPadding.start}px`, flexShrink: 0 }} />
+        <motion.div style={{ x }} className="flex gap-4 pt-[3vh] pb-[5vh] px-[3%]">
           {cards.map((card, index) => (
             <Card 
               card={card} 
@@ -69,10 +68,6 @@ const HorizontalScrollCarousel = () => {
               isLastCard={index === cards.length - 1}
             />
           ))}
-          <div className="flex items-center just">
-            {/* Este comentario se mantiene igual */}
-          </div>
-          <div style={{ width: carouselPadding.end, flexShrink: 0 }} />
         </motion.div>
       </div>
     </section>
@@ -120,10 +115,11 @@ const Card = ({ card, windowHeight, windowWidth, isLastCard }: CardProps) => {
       <Image
         src={card.url}
         alt={`Image ${card.id}`}
-        fill
-        style={{ objectFit: 'cover' }}
-        sizes={`(max-width: 768px) 100vw, ${containerWidth}px`}
+        width={card.width}
+        height={card.height}
+        style={{ objectFit: 'cover', width: '100%', height: '100%' }}
         quality={100}
+        unoptimized
       />
     </div>
   );

@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useTransform, useScroll } from "framer-motion";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import Image from 'next/image';
 
@@ -32,8 +32,6 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-/*   const carouselPadding = { start: '3%', end: '3%' }; */
-
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -51,9 +49,19 @@ const HorizontalScrollCarousel = () => {
       containerWidth = 1200;
     }
     return acc + containerWidth + 16;
-  }, 0) + (windowWidth * 0.06); // Add 6% of window width for start and end padding
+  }, 0) + (windowWidth * 0.06);
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0px", `-${totalWidth - windowWidth}px`]);
+  // Aplicamos una función de suavizado al scrollYProgress
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  //`stiffness`: Controla la rigidez del resorte. Valores más altos hacen que el movimiento sea más rápido pero también más brusco.`damping`: Controla la amortiguación. Valores más altos reducen las oscilaciones pero pueden hacer el movimiento más lento.`restDelta`: Define la diferencia mínima del valor objetivo para considerar que el resorte está en reposo.
+
+  // Usamos smoothProgress en lugar de scrollYProgress
+  const x = useTransform(smoothProgress, [0, 1], ["0px", `-${totalWidth - windowWidth}px`]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh]">
@@ -89,7 +97,7 @@ interface CardProps {
 
 const Card = ({ card, windowHeight, windowWidth, isLastCard }: CardProps) => {
   const aspectRatio = card.width / card.height;
-  const cardHeight = windowHeight * 0.92; // 100vh - 3% top - 5% bottom
+  const cardHeight = windowHeight * 0.92;
   let containerWidth, containerHeight;
 
   if (isLastCard) {
