@@ -7,6 +7,5 @@ export default function Home() {
         <div>
 <Contact />
         </div>
-
     )
 }
